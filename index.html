@@ -9,20 +9,41 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+    <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E4WK1PQMJG"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-E4WK1PQMJG');
+  </script>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-K6M3DPH6');</script>
+  <!-- End Google Tag Manager -->
+  
 </head>
 <body>
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K6M3DPH6"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
   <!-- Navigation -->
   <nav>
     <div class="logo">Marcus Grant</div>
     <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#highlights">Highlights</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#resume">Resume</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <li><a href="#about" onclick="gtag('event','nav_click',{section:'about'})">About</a></li>
+    <li><a href="#highlights" onclick="gtag('event','nav_click',{section:'highlights'})">Highlights</a></li>
+    <li><a href="#experience" onclick="gtag('event','nav_click',{section:'experience'})">Experience</a></li>
+    <li><a href="#portfolio" onclick="gtag('event','nav_click',{section:'portfolio'})">Portfolio</a></li>
+    <li><a href="#consulting" onclick="gtag('event','nav_click',{section:'consulting'})">Consulting</a></li>
+    <li><a href="#resume" onclick="gtag('event','nav_click',{section:'resume'})">Resume</a></li>
+    <li><a href="#contact" onclick="gtag('event','nav_click',{section:'contact'})">Contact</a></li>
+  </ul>
   </nav>
 
   <!-- Hero -->
@@ -45,7 +66,7 @@
           <span class="badge">Growth Analytics</span>
         </div>
         <div class="hero-ctas">
-          <a href="resume/Marcus_Grant_Resume.pdf" class="btn btn-primary" download>Download Resume</a>
+          <a href="resume/Marcus_Grant_Resume.pdf" class="btn btn-primary" download onclick="gtag('event','resume_download',{location:'hero'})">Download Resume</a>
           <a href="#about" class="btn btn-outline">Learn More</a>
         </div>
       </div>
@@ -179,33 +200,125 @@
     </div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects">
+  <!-- Portfolio -->
+  <section id="portfolio">
     <div class="section-inner">
-      <div class="section-label">Work</div>
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="project-grid">
+      <div class="section-label">Work Samples</div>
+      <h2 class="section-title">Analytics &amp; AI Portfolio</h2>
+      <div class="portfolio-grid">
 
-        <div class="project-card">
-          <div class="project-header">
-            <span class="project-icon">📈</span>
-            <div class="project-tags">
-              <span class="tag">Prophet</span>
-              <span class="tag">STL + LSTM</span>
-              <span class="tag">SARIMA</span>
-              <span class="tag">Python</span>
-              <span class="tag">PyTorch</span>
-            </div>
+        <div class="portfolio-card">
+          <h3>Player Segmentation Pipeline</h3>
+          <div class="portfolio-tags">
+            <span class="ptag">Python</span>
+            <span class="ptag">BigQuery</span>
+            <span class="ptag">scikit-learn</span>
+            <span class="ptag">PCA</span>
+            <span class="ptag">K-Means</span>
           </div>
+          <p>End-to-end ML pipeline that segments players into behavioral clusters using 14 economic features, PCA dimensionality reduction, and K-Means. Runs on a rolling 30-day basis and tracks cluster migration over time via Sankey diagrams and transition matrices.</p>
+          <a href="https://github.com/Marcus-M-Grant/applied-analytics-ai/tree/master/01-player-segmentation" class="portfolio-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </div>
+
+        <div class="portfolio-card">
+          <h3>AI-Powered Daily Reporting Agent</h3>
+          <div class="portfolio-tags">
+            <span class="ptag">Vertex AI</span>
+            <span class="ptag">Gemini 2.5 Pro</span>
+            <span class="ptag">BigQuery</span>
+            <span class="ptag">Python</span>
+          </div>
+          <p>Automated analytics agent that pulls daily KPIs from BigQuery, computes day-over-day and rolling period comparisons, and uses Gemini 2.5 Pro to generate a concise narrative summary — flagging anomalies and surfacing movers without human intervention.</p>
+          <a href="https://github.com/Marcus-M-Grant/applied-analytics-ai/tree/master/02-ai-reporting-agent" class="portfolio-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </div>
+
+        <div class="portfolio-card">
+          <h3>Token Economy Efficiency Model</h3>
+          <div class="portfolio-tags">
+            <span class="ptag">BigQuery SQL</span>
+            <span class="ptag">CTEs</span>
+            <span class="ptag">Window Functions</span>
+          </div>
+          <p>Multi-CTE SQL model tracking cost-per-token-issued across all issuance channels. Incorporates live price feeds and produces 7-, 30-, and 90-day rolling efficiency metrics for real-time economic health monitoring.</p>
+          <a href="https://github.com/Marcus-M-Grant/applied-analytics-ai/tree/master/03-token-economy-efficiency" class="portfolio-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </div>
+
+        <div class="portfolio-card">
+          <h3>Community Sentiment Analysis</h3>
+          <div class="portfolio-tags">
+            <span class="ptag">Python</span>
+            <span class="ptag">Hugging Face</span>
+            <span class="ptag">BART</span>
+            <span class="ptag">NLP</span>
+          </div>
+          <p>NLP pipeline that scrapes 24-hour community messages, generates an abstractive summary via BART-large-cnn, and runs per-message sentiment classification to surface negative feedback themes for product and community teams.</p>
+          <a href="https://github.com/Marcus-M-Grant/applied-analytics-ai/tree/master/04-sentiment-analysis" class="portfolio-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </div>
+
+        <div class="portfolio-card">
+          <h3>Fraud &amp; Abuse Detection</h3>
+          <div class="portfolio-tags">
+            <span class="ptag">Python</span>
+            <span class="ptag">BigQuery</span>
+            <span class="ptag">Anomaly Detection</span>
+            <span class="ptag">pandas</span>
+          </div>
+          <p>Two-part detection suite: statistical profiling of speed hack telemetry across 750k+ events, and percentile-threshold detection of reward grant abuse — with automated suspension duration recommendations exported for enforcement action.</p>
+          <a href="https://github.com/Marcus-M-Grant/applied-analytics-ai/tree/master/05-fraud-detection" class="portfolio-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
+        </div>
+
+        <div class="portfolio-card">
           <h3>Revenue Forecast: Model Ensemble</h3>
-          <p>Three-model ensemble projecting 36 months of insurance revenue across New Premium, Renewal Premium, and Fee Revenue. Combines Bayesian (Prophet), neural (STL+LSTM), and classical statistical (SARIMA) approaches with equal weighting to reduce model-specific bias and produce more robust predictions.</p>
-          <div class="project-links">
-            <a href="https://github.com/Marcus-M-Grant/applied-analytics-ai/tree/master/06-revenue-forecast" target="_blank" rel="noopener" class="project-link">GitHub</a>
-            <a href="https://github.com/Marcus-M-Grant/applied-analytics-ai/blob/master/06-revenue-forecast/revenue_forecast_ensemble.ipynb" target="_blank" rel="noopener" class="project-link project-link-primary">View Notebook</a>
+          <div class="portfolio-tags">
+            <span class="ptag">Python</span>
+            <span class="ptag">Prophet</span>
+            <span class="ptag">PyTorch</span>
+            <span class="ptag">SARIMA</span>
+            <span class="ptag">LSTM</span>
           </div>
+          <p>Three-model ensemble projecting 36 months of insurance revenue across New Premium, Renewal Premium, and Fee Revenue. Combines Bayesian (Prophet), neural (STL+LSTM), and classical statistical (SARIMA) approaches with equal weighting to reduce model-specific bias and produce more robust predictions.</p>
+          <a href="https://github.com/Marcus-M-Grant/applied-analytics-ai/tree/master/06-revenue-forecast" class="portfolio-link" target="_blank" rel="noopener">View on GitHub &rarr;</a>
         </div>
 
       </div>
+    </div>
+  </section>
+
+  <!-- Consulting -->
+  <section id="consulting">
+    <div class="section-inner">
+      <div class="section-label">Consulting &amp; Services</div>
+      <h2 class="section-title">Work With Me</h2>
+      <p style="font-size:1.05rem; color:var(--text); margin-bottom:2rem; line-height:1.8;">
+        I work with companies looking to build or scale their analytics and AI capabilities.
+        Whether you're trying to grow your user base, make sense of your data, or implement
+        AI-driven solutions, I can help you move faster and make better decisions.
+      </p>
+      <div class="highlights-grid" style="margin-bottom:2.5rem;">
+        <div class="highlight-card">
+          <div class="icon">📣</div>
+          <h3>Marketing &amp; User Acquisition</h3>
+          <div class="desc" style="font-size:0.9rem; margin-top:0.5rem;">Paid media strategy, channel attribution, MMM, and campaign optimization across AppLovin, Google, and Meta.</div>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">📊</div>
+          <h3>Analytics Strategy</h3>
+          <div class="desc" style="font-size:0.9rem; margin-top:0.5rem;">Building analytics functions from the ground up — KPI frameworks, dashboards, experimentation programs, and data pipelines.</div>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">🤖</div>
+          <h3>AI Implementation</h3>
+          <div class="desc" style="font-size:0.9rem; margin-top:0.5rem;">Scoping and deploying practical AI and ML solutions — LLMs, predictive modeling, and automation tailored to your business.</div>
+        </div>
+        <div class="highlight-card">
+          <div class="icon">📈</div>
+          <h3>Growth &amp; Monetization</h3>
+          <div class="desc" style="font-size:0.9rem; margin-top:0.5rem;">Data-driven growth strategy, A/B testing, funnel analysis, and monetization optimization for consumer and B2B products.</div>
+        </div>
+      </div>
+      <a href="https://www.linkedin.com/in/marcus-grant-13878848/" class="btn btn-primary" target="_blank" rel="noopener">
+        Connect on LinkedIn
+      </a>
     </div>
   </section>
 
@@ -219,7 +332,7 @@
           <h3>Marcus Grant — Full Resume</h3>
           <p>Analytics leadership, AI/ML, growth strategy, and military service — complete work history and credentials.</p>
         </div>
-        <a href="resume/Marcus_Grant_Resume.pdf" class="btn btn-primary" download>
+        <a href="resume/Marcus_Grant_Resume.pdf" class="btn btn-primary" download onclick="gtag('event','resume_download',{location:'resume_section'})">Download PDF</a>
           Download PDF
         </a>
       </div>
